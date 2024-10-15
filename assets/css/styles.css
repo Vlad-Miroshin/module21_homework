@@ -1,0 +1,106 @@
+:root {
+    --main-font-family: "Roboto", sans-serif;
+    --main-font-size: 16px;
+    --main-color-gray: #636b6f;
+    --button-inactive-color: rgb(74, 157, 252);
+    --button-active-color: rgb(17, 127, 252);
+}
+
+body {
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size);
+    color: var(--main-color-gray);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.task_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 3rem;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.task_header {
+    font-size: 1.5rem;
+    background-color: var(--button-inactive-color);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.task_header a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    margin: 10px;
+}
+
+.task_header:hover {
+    background-color: var(--button-active-color);
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.task_header:hover a {
+    color: white;
+}
+
+.task_header a:hover {
+    color: white;
+}
+
+.task_description {
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page_description {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.page_destination {
+    font-size: 1.3rem;
+    margin-top: 50px;
+}
+
+.footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.copyright {
+    margin-top: 4rem;
+    font-size: .75rem;
+    color: var(--main-color-gray);
+}
+
+.copyright a {
+    text-decoration: none;
+    color: inherit;
+}
