@@ -1,4 +1,4 @@
-const links = document.querySelectorAll('.task_header');
+const links = document.querySelectorAll('.task__header');
 
 links.forEach( (link) => {
     link.onclick = (event) => {

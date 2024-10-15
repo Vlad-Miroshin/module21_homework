@@ -14,14 +14,37 @@
         <h1>Задание 3</h1>
     </header>
     <main>
-        <section class="page">
-            <div class="page_description">
-                Напишите функцию, которая создает пустой объект, но без прототипа.
+        <div class="page">
+            <div class="page__description">
+                Написать скрипт, который при открытии страницы будет делать следующее:<br>
+                Если пользователь зашел в первый раз, вывести окно prompt с сообщением: «Добро пожаловать! Назовите, пожалуйста, ваше имя».<br>
+                После того, как пользователь введет имя, записать имя, дату и время визита в localStorage.<br>
+                Если пользователь открывает страницу не впервые (это можно узнать по наличию соответствующих записей в localStorage), вывести в alert сообщение вида: «Добрый день, *имя пользователя*! Давно не виделись. 
+                В последний раз вы были у нас *дата последнего посещения*» и перезаписать дату последнего посещения.<br>
+                Дату можно вывести в любом удобочитаемом формате (не Timestamp, должен четко читаться день, месяц, год и время — часы и минуты).
             </div>
-            <div class="page_destination">
-                Всё происходит в консоли браузера...
+
+            <div id="visitor_form" class="page__content page__content--hidden">
+                <form class="page__form" action="#">
+                    <div class="page__form_header">Добро пожаловать!</div>
+                    <label class="page__label">Назовите, пожалуйста, Ваше имя:
+                        <input id="visitor_name" class="page__input" type="text" name="visitor_name" placeholder="Имя">
+                    </label>
+                    <button id="btn-save" class="page__button" type="submit">Запомнить</button>
+                </form>
             </div>
-        </section>
+
+            <div id="visitor_message" class="page__content page__content--hidden">
+                <div class="page__form">
+                    <div id="visitor_header" class="page__form_header">Здравствуйте, Аноним!</div>
+                    <div id="visitor_text" class="page__form_text">
+                        В последний раз вы были у нас 15 октября 2024 г. в 19:00
+                    </div>
+                    <button id="btn-forget" class="page__button" type="submit">Забыть</button>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <footer class="footer">

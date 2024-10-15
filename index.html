@@ -14,22 +14,22 @@
         <h1>Модуль 21. Домашнее задание. AJAX (HW-04).</h1>
     </header>
     <main>
-        <section class="task_wrap">
+        <section class="task__wrap">
 
             <div class="task">
-                <div class="task_header">
+                <div class="task__header">
                     <a href="./task_1/page_1.html">Задание 1</a>
                 </div>
-                <div class="task_description">
+                <div class="task__description">
                     Дана заготовка и результат, который вы должны получить. Задача — написать код, который будет преобразовывать XML в JS-объект и выводить его в консоль.
                 </div>
             </div>
             
             <div class="task">
-                <div class="task_header">
+                <div class="task__header">
                     <a href="./task_2/page_2.html">Задание 2</a>
                 </div>
-                <div class="task_description">
+                <div class="task__description">
                     Дан образец JSON-строки.
                     Задача — создать JS-объект, который при преобразовании в JSON будет возвращать в качестве результата такую же JSON-строку, как в образце. 
                     Получившуюся строку вывести в консоль.
@@ -37,10 +37,10 @@
             </div>
 
             <div class="task">
-                <div class="task_header">
+                <div class="task__header">
                     <a href="./task_3/page_3.html">Задание 3</a>
                 </div>
-                <div class="task_description">
+                <div class="task__description">
                     Написать скрипт, который при открытии страницы будет делать следующее:<br>
                     Если пользователь зашел в первый раз, вывести окно prompt с сообщением: «Добро пожаловать! Назовите, пожалуйста, ваше имя».<br>
                     После того, как пользователь введет имя, записать имя, дату и время визита в localStorage.<br>
@@ -51,10 +51,10 @@
             </div>
 
             <div class="task">
-                <div class="task_header">
+                <div class="task__header">
                     <a href="./task_4/page_4.html">Задание 4</a>
                 </div>
-                <div class="task_description">
+                <div class="task__description">
                     Создать Promise, в котором c задержкой в три секунды сгенерировать случайное целое число от 1 до 100. Для создания задержки использовать setTimeout. Если сгенерированное число четное — Promise выполнится успешно (resolve), если нечетное — выполнится с ошибкой (reject). После разрешения Promise обработать результат его выполнения и вывести сообщение в консоль:<br>
                     «Завершено успешно. Сгенерированное число — number», если Promise завершился успешно. Вместо number подставить сгенерированное число<br>
                     «Завершено с ошибкой. Сгенерированное число — number», если Promise завершился с ошибкой. Вместо number подставить сгенерированное число<br>
@@ -62,10 +62,10 @@
             </div>
 
             <div class="task">
-                <div class="task_header">
+                <div class="task__header">
                     <a href="./task_5/page_5.html">Задание 5</a>
                 </div>
-                <div class="task_description">
+                <div class="task__description">
                     Написать код приложения, интерфейс которого состоит из поля ввода и кнопки «Получить список задач». При нажатии на кнопку нужно отправить запрос с помощью fetch на URL https://jsonplaceholder.typicode.com/users/3/todos. Число 3 представляет собой id пользователя, вместо него нужно подставить число, введенное в поле. Если пользователь с таким id существует, вернется список задач для этого пользователя, каждая задача представлена объектом<br>
                     Где title — описание задачи, а completed — флаг, отображающий, выполнена задача или нет. Вывести данный список на страницу, оформив соответствующим образом: в виде списка (ul или ol), выполненные задачи должны быть написаны зачеркнутым текстом. Если пользователь с введенным id не существует, вывести сообщение:
                     «Пользователь с указанным id не найден».
@@ -73,10 +73,10 @@
             </div>
 
             <div class="task">
-                <div class="task_header">
+                <div class="task__header">
                     <a href="./task_6/page_6.html">Задание 6</a>
                 </div>
-                <div class="task_description">
+                <div class="task__description">
                     Написать код приложения, интерфейс которого состоит из двух input и кнопки. В input можно ввести любое число.<br>
 
                     Заголовок первого input — «номер страницы».<br>
