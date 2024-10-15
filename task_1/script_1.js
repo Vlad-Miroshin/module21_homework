@@ -36,35 +36,35 @@ const xmlText = `
 
 // Решение
 
-function getStudentsFromXml(xml) {
+function getListFromXml(xml) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, 'text/xml');
     
-    const element_students = doc.querySelectorAll('student');
+    const studentNodes = doc.querySelectorAll('student');
     
     const students = [];
     
-    element_students.forEach(element => {
-        const element_name = element.querySelector('name');
+    studentNodes.forEach(node => {
+        const nameNode = node.querySelector('name');
     
         const student = {
-            name: element_name.querySelector('first').textContent + ' ' + 
-                element_name.querySelector('second').textContent,
+            name: nameNode.querySelector('first').textContent + ' ' + 
+                nameNode.querySelector('second').textContent,
     
-            age: parseInt(element.querySelector('age').textContent),
-            prof: element.querySelector('prof').textContent,
-            lang:  element_name.getAttribute('lang')
+            age: parseInt(node.querySelector('age').textContent),
+            prof: node.querySelector('prof').textContent,
+            lang:  nameNode.getAttribute('lang')
         };
     
         students.push(student);
     });
 
-    return students;
+    return { list: students };
 }
 
 // проверка
 
-console.log(getStudentsFromXml(xmlText));
+console.log(getListFromXml(xmlText));
 
 
 // Доп: Проверьте своё решение на этом объекте:
@@ -171,4 +171,4 @@ const xmlTextDop = `
 
 // работает!
 
-console.log(getStudentsFromXml(xmlTextDop));
+console.log(getListFromXml(xmlTextDop));
