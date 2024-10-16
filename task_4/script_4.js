@@ -18,6 +18,8 @@ function isEven(value) {
     return value % 2 === 0;
 }
 
+console.log(`Ожидание выполнения promise (${DELAY_MILLISECONDS} мсек)...`);
+
 const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
         const number = getRandomInt(1, 100);

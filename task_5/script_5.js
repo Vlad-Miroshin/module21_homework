@@ -1,57 +1,11 @@
-import {Lamp, Laptop, Washer, Boiler, DeviceSet} from './classes_5.js';
+/*
 
-const devices = new DeviceSet();
-devices.add(new Lamp());
-devices.add(new Lamp(20));
-const lamp3 = devices.add(new Lamp(100, 'Inc'));
-devices.add(new Laptop(200, 'Lenovo'));
-devices.add(new Laptop(150, 'Apple'));
-devices.add(new Washer());
-const boiler = devices.add(new Boiler());
+Задание 5
 
-lamp3.setDimmer(50);
+Написать код приложения, интерфейс которого состоит из поля ввода и кнопки «Получить список задач». При нажатии на кнопку нужно отправить запрос с помощью fetch на URL https://jsonplaceholder.typicode.com/users/3/todos. 
 
-function logTotalInputPower(devices) {
-    console.log(`Total input power is ${devices.getInputPower()} wt`);
-}
+Число 3 представляет собой id пользователя, вместо него нужно подставить число, введенное в поле. Если пользователь с таким id существует, вернется список задач для этого пользователя, каждая задача представлена объектом<
 
-function logCommand(command) {
-    console.log(`Command: ${command}`);
-}
+Где title — описание задачи, а completed — флаг, отображающий, выполнена задача или нет. Вывести данный список на страницу, оформив соответствующим образом: в виде списка (ul или ol), выполненные задачи должны быть написаны зачеркнутым текстом. Если пользователь с введенным id не существует, вывести сообщение: «Пользователь с указанным id не найден».
 
-// список всех устройств
-console.log(`Devices [${devices.count}]: ${devices.toString()}`);
-
-// включить все
-logCommand('SwitchOn');
-devices.switchOn();
-
-logTotalInputPower(devices);
-
-// выключить все
-logCommand('SwitchOff');
-devices.switchOff();
-
-logTotalInputPower(devices);
-
-// включить только лампочки
-logCommand('SwitchOn(Lamps)');
-const lamps = devices.getItemsByClassName('Lamp');
-lamps.switchOn();
-
-logTotalInputPower(devices);
-
-logCommand('SwitchOff');
-devices.switchOff();
-
-// включить бойлер
-logCommand('SwitchOn(Boiler)');
-boiler.switchOn();
-
-logTotalInputPower(devices);
-
-// уходя - гасите свет!
-logCommand('SwitchOff');
-devices.switchOff();
-
-logTotalInputPower(devices);
+*/
