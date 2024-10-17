@@ -128,7 +128,7 @@ h2 {
 }
 
 .page__button {
-    width: 150px;
+    width: 200px;
     height: 40px;
     align-self: flex-end;
     font-size: 1rem;
@@ -140,6 +140,10 @@ h2 {
     opacity: .9;
 }
 
+.page__button--long {
+    width: 300px;
+}
+
 .page__button:hover {
     opacity: 1;
     transition: .3s;
@@ -149,6 +153,16 @@ h2 {
 .page__destination {
     font-size: 1.3rem;
     margin-top: 50px;
+}
+
+
+/* .response__list {
+} */
+
+.response__list--completed {
+    text-decoration: line-through;
+	text-decoration-color: red;
+    color: #a9a9aa;
 }
 
 .footer {

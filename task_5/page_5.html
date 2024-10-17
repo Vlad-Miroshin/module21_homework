@@ -21,6 +21,22 @@
                 Где title — описание задачи, а completed — флаг, отображающий, выполнена задача или нет. Вывести данный список на страницу, оформив соответствующим образом: в виде списка (ul или ol), выполненные задачи должны быть написаны зачеркнутым текстом. Если пользователь с введенным id не существует, вывести сообщение:
                 «Пользователь с указанным id не найден».            
             </div>
+
+            <div class="page__content">
+                <form class="page__form" action="#">
+                    <div class="page__form_header">Получить список задач</div>
+                    <label class="page__label">Идентификатор пользователя:
+                        <input id="user_id" class="page__input" type="text" name="user_id" placeholder="ID">
+                    </label>
+                    <button id="btn-fetch" class="page__button" type="submit">Получить список задач</button>
+                </form>
+            </div>
+    
+            <div id="response_container" class="page__content page__content--hidden">
+                <ul class="response__list" >                   
+                </ul>
+            </div>
+
         </div>
     </main>
 
