@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         document.querySelector(selector).onclick = handler;
     }
   
-    onclick('#btn-fetch', (event) => act_fetch(event));
+    onclick('#btn_fetch', (event) => act_fetch(event));
 });
 
 

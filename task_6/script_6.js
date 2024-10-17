@@ -19,3 +19,81 @@
 Если пользователь перезагрузил страницу, то ему должны показываться картинки из последнего успешно выполненного запроса (использовать localStorage).                
 
 */
+
+
+document.addEventListener('DOMContentLoaded', ()=> {
+    function onclick(selector, handler) {
+        document.querySelector(selector).onclick = handler;
+    }
+  
+    onclick('#btn_fetch', (event) => act_fetch(event));
+});
+
+
+const response_container = document.querySelector('#response_container');
+const images = document.querySelector('.response__images');
+
+function act_fetch(event) {
+    event.preventDefault();
+
+    // let id = document.querySelector("#user_id").value;
+    // if (!id) {
+    //     id = '1'; // default user id
+    // }
+
+    // const url = `https://jsonplaceholder.typicode.com/users/${id}/todos`;
+
+    fetch('https://picsum.photos/v2/list?page=5&limit=7')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            updateResponse(data, id);
+        });
+}
+
+function clearResponse() {
+    while (images.firstChild) {
+        images.removeChild(images.lastChild);
+    };
+}
+
+function addItem(text, className = '') {
+    const li = document.createElement("li");
+    li.innerText = text;
+
+    if (className) {
+        li.classList.add(className);
+    }
+
+    images.appendChild(li);
+}
+
+function hideResponse() {
+    response_container.classList.add('page__content--hidden');
+}
+
+function showResponse() {
+    response_container.classList.remove('page__content--hidden');
+}
+
+function updateResponse(data, id) {
+
+    console.log(data);
+
+
+
+    // hideResponse();
+
+    // clearResponse();
+
+    // if (!data || data.length === 0) {
+    //     addItem(`Пользователь с id=${id} не найден `);
+    // } else {
+    //     data.forEach(element => {
+    //         addItem(element.title, element.completed ? 'response__list--completed' : '');
+    //     });
+    // }
+
+    // showResponse();
+}

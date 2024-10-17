@@ -161,6 +161,7 @@ h2 {
 
 .response__list--completed {
     text-decoration: line-through;
+    /* text-decoration-style: wavy; */
 	text-decoration-color: red;
     color: #a9a9aa;
 }

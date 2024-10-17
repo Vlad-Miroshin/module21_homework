@@ -31,7 +31,25 @@
                 После получения данных вывести список картинок на экран.<br><br>
                
                 Если пользователь перезагрузил страницу, то ему должны показываться картинки из последнего успешно выполненного запроса (использовать localStorage).                
-        </div>
+            </div>
+
+            <div class="page__content">
+                <form class="page__form" action="#">
+                    <label class="page__label">Номер страницы:
+                        <input id="page_num" class="page__input" type="text" name="page_num" placeholder="Страница">
+                    </label>
+                    <label class="page__label">Лимит:
+                        <input id="page_limit" class="page__input" type="text" name="page_limit" placeholder="Лимит">
+                    </label>
+                    <button id="btn_fetch" class="page__button" type="submit">Запрос</button>
+                </form>
+            </div>
+    
+            <div id="response_container" class="page__content page__content--hidden">
+                <div class="response__images" >                   
+                </div>
+            </div>
+
         </div>
     </main>
 
