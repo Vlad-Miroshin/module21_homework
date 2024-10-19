@@ -35,18 +35,27 @@
 
             <div class="page__content">
                 <form class="page__form" action="#">
-                    <label class="page__label">Номер страницы:
+                    <label class="page__label">Номер страницы (1-10):
                         <input id="page_num" class="page__input" type="text" name="page_num" placeholder="Страница">
                     </label>
-                    <label class="page__label">Лимит:
+                    <label class="page__label">Лимит (1-10):
                         <input id="page_limit" class="page__input" type="text" name="page_limit" placeholder="Лимит">
                     </label>
-                    <button id="btn_fetch" class="page__button" type="submit">Запрос</button>
+                    <div class="page__bottom">
+                        <div class="page__error">Номер страницы и лимит вне диапазона от 1 до 10</div>
+                        <button id="btn_fetch" class="page__button" type="submit">Запрос</button>
+                    </div>
                 </form>
             </div>
     
-            <div id="response_container" class="page__content page__content--hidden">
-                <div class="response__images" >                   
+            <div id="response_container" class="page__content">
+                <div class="response__images">
+                    <img class="response__image" src="https://picsum.photos/id/0/200/133" alt="img_0">
+                    <img class="response__image" src="https://picsum.photos/id/1/200/133" alt="Alejandro Escamilla">
+                    <img class="response__image" src="https://picsum.photos/id/2/200/133" alt="Alejandro Escamilla">
+                    <img class="response__image" src="https://picsum.photos/id/3/200/133" alt="Alejandro Escamilla">
+                    <img class="response__image" src="https://picsum.photos/id/4/200/133" alt="Alejandro Escamilla">
+                    <img class="response__image" src="https://picsum.photos/id/5/200/133" alt="Alejandro Escamilla">
                 </div>
             </div>
 

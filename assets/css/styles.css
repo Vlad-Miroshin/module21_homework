@@ -135,7 +135,6 @@ h2 {
     background: #555;
     color: #fff;
     border-radius: 5px;
-    margin: 20px 5px 0 0;
     border: none;
     opacity: .9;
 }
@@ -155,6 +154,20 @@ h2 {
     margin-top: 50px;
 }
 
+.page__error {
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+    color: red;
+}
+
+.page__bottom {
+    margin: 20px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
 
 /* .response__list {
 } */
@@ -164,6 +177,19 @@ h2 {
     /* text-decoration-style: wavy; */
 	text-decoration-color: red;
     color: #a9a9aa;
+}
+
+.response__images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    max-width: 700px;
+}
+
+.response__image {
+    width: 200px;
 }
 
 .footer {

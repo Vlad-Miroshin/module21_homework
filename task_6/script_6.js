@@ -43,12 +43,12 @@ function act_fetch(event) {
 
     // const url = `https://jsonplaceholder.typicode.com/users/${id}/todos`;
 
-    fetch('https://picsum.photos/v2/list?page=5&limit=7')
+    fetch('https://picsum.photos/v2/list?page=1&limit=6')
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            updateResponse(data, id);
+            updateResponse(data);
         });
 }
 
@@ -77,7 +77,7 @@ function showResponse() {
     response_container.classList.remove('page__content--hidden');
 }
 
-function updateResponse(data, id) {
+function updateResponse(data) {
 
     console.log(data);
 
