@@ -20,6 +20,8 @@
 
 */
 
+import {FormParams, LastResponseStorage} from './classes_6.js';
+
 
 document.addEventListener('DOMContentLoaded', ()=> {
     function onclick(selector, handler) {
@@ -27,29 +29,57 @@ document.addEventListener('DOMContentLoaded', ()=> {
     }
   
     onclick('#btn_fetch', (event) => act_fetch(event));
+
+    showLastResponse();
 });
 
 
 const response_container = document.querySelector('#response_container');
 const images = document.querySelector('.response__images');
+const page__error = document.querySelector(".page__error");
+
+function showLastResponse() {
+    const lastResponse = LastResponseStorage.getData();
+    if (lastResponse !== null) {
+        createResponseView(lastResponse);
+    }
+}
 
 function act_fetch(event) {
     event.preventDefault();
 
-    // let id = document.querySelector("#user_id").value;
-    // if (!id) {
-    //     id = '1'; // default user id
-    // }
+    hideParamsError();
 
-    // const url = `https://jsonplaceholder.typicode.com/users/${id}/todos`;
+    const p = getFormParams();
+    if (p.getHasBrokenRules()) {
+        showParamsError(p.getMessage());
+        return;
+    }
 
-    fetch('https://picsum.photos/v2/list?page=1&limit=6')
+    const url = `https://picsum.photos/v2/list?page=${p.getNum()}&limit=${p.getLimit()}`;
+
+    fetch(url)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            updateResponse(data);
+            createResponseView(data);
         });
+}
+
+function getFormParams() {
+    const page_num = document.querySelector("#page_num").value;
+    const page_limit = document.querySelector("#page_limit").value;
+
+    return new FormParams(page_num, page_limit);
+}
+
+function showParamsError(text) {
+    page__error.innerHTML = text;
+}
+
+function hideParamsError() {
+    page__error.innerHTML = "";
 }
 
 function clearResponse() {
@@ -58,15 +88,20 @@ function clearResponse() {
     };
 }
 
-function addItem(text, className = '') {
-    const li = document.createElement("li");
-    li.innerText = text;
+function addElement(item) {
+    const img = document.createElement("img");
 
-    if (className) {
-        li.classList.add(className);
-    }
+    img.src = getResizedUrl(item);
+    img.alt = `img_${item.id}`;
+    img.classList.add("response__image");
 
-    images.appendChild(li);
+    images.appendChild(img);
+}
+
+function getResizedUrl(item) {
+    return item.download_url
+        .replace(item.width, '200')
+        .replace(item.height, '133');
 }
 
 function hideResponse() {
@@ -77,23 +112,18 @@ function showResponse() {
     response_container.classList.remove('page__content--hidden');
 }
 
-function updateResponse(data) {
+function createResponseView(data) {
 
-    console.log(data);
+    LastResponseStorage.save(data);
 
+    hideResponse();
 
+    clearResponse();
 
-    // hideResponse();
+    data.forEach(element => {
+        addElement(element);
+    });
 
-    // clearResponse();
-
-    // if (!data || data.length === 0) {
-    //     addItem(`Пользователь с id=${id} не найден `);
-    // } else {
-    //     data.forEach(element => {
-    //         addItem(element.title, element.completed ? 'response__list--completed' : '');
-    //     });
-    // }
-
-    // showResponse();
+    showResponse();
 }
+

@@ -169,9 +169,6 @@ h2 {
 }
 
 
-/* .response__list {
-} */
-
 .response__list--completed {
     text-decoration: line-through;
     /* text-decoration-style: wavy; */
