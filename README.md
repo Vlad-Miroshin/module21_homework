@@ -16,16 +16,19 @@
 ## Использованные технологии
 
 - [HTML](https://www.w3.org/TR/2021/SPSD-html52-20210128/)
+- [CSS](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/CSS_basics)
 - [Google fonts](https://fonts.google.com/specimen/Roboto) Загрузка шрифта Roboto через Google API
 - [JavaScript](https://262.ecma-international.org)
 
 ## Реализованные требования
 
-- Результат выводится в консоль браузера.
+- Результат заданий 1, 2, 4 выводится в консоль браузера.
+- Результат заданий 3, 5, 6 отображается в виде страницы.
 
 ## Дополнительно
 
 - Использованы модули JS.
+- В задании 6 выполняется запрос уменьшенных копий изображений для ускорения загрузки.
 
 ## Как открыть/запустить
 
