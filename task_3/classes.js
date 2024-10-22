@@ -25,7 +25,9 @@ class LastVisit {
         if (typeof value === 'string')
             value = parseInt(value);
 
-        this._time = value;
+        if (typeof value === 'number') {
+            this._time = value;
+        }
     }
 
     setNow() {
